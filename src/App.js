@@ -33,7 +33,7 @@ const App = () => {
     const runningRef = useRef(running);
     runningRef.current = running;
 
-    const [speed, setSpeed] = useState(1);
+    const [speed, setSpeed] = useState(500);
     const speedRef = useRef(speed);
     speedRef.current = speed;
 
@@ -134,24 +134,26 @@ const App = () => {
                             >
                                 <Grid item xs={9}>
                                     <Grid
+                                        spacing={1}
                                         container
                                         direction="row"
                                         justify="flex-start"
                                         alignItems="flex-start"
                                     >
-                                        <Grid item xs={1}>
-                                            <SpeedIcon />
-                                        </Grid>
                                         <Grid item xs={6}>
                                             <Slider
-                                                defaultValue={1}
+                                                defaultValue={500}
                                                 aria-labelledby="discrete-slider-always"
                                                 step={10}
                                                 min={1}
-                                                max={2000}
+                                                max={1000}
                                                 onChange={speedChange}
                                                 color="secondary"
+                                                track="inverted"
                                             />
+                                        </Grid>
+                                        <Grid item xs={1}>
+                                            <SpeedIcon />
                                         </Grid>
                                     </Grid>
                                 </Grid>
